@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arlu - Modèles</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="logo.png" alt="Logo Arlu" />
+  </a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="models.html" class="active" aria-current="page">Modèles</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h2>Nos modèles</h2>
+
+  <div class="filters category-filters" role="group" aria-label="Filtrer les modèles par catégorie">
+    <button type="button" data-category="all" class="active" aria-pressed="true">Tous</button>
+    <button type="button" data-category="sport" aria-pressed="false">Sportive</button>
+    <button type="button" data-category="suv" aria-pressed="false">SUV</button>
+    <button type="button" data-category="berline" aria-pressed="false">Berline</button>
+    <button type="button" data-category="citadine" aria-pressed="false">Citadine</button>
+  </div>
+  
+  <div class="filters brand-filters" role="group" aria-label="Filtrer les modèles par marque">
+    <button type="button" data-brand="all" class="active" aria-pressed="true">Toutes les marques</button>
+    <button type="button" data-brand="audi" aria-pressed="false">Audi</button>
+    <button type="button" data-brand="bentley" aria-pressed="false">Bentley</button>
+    <button type="button" data-brand="bmw" aria-pressed="false">BMW</button>
+    <button type="button" data-brand="Dodge" aria-pressed="false">Dodge</button>
+    <button type="button" data-brand="Ferrari" aria-pressed="false">Ferrari</button>
+    <button type="button" data-brand="mercedes" aria-pressed="false">Mercedes</button>
+    <button type="button" data-brand="porsche" aria-pressed="false">Porsche</button>
+  </div>
+
+  <div class="model-grid" id="modelGrid">
+    <a href="modeles/458.html" class="model-card" data-category="sport" data-brand="Ferrari">
+      <img src="car_pics/458.png" alt="458" />
+      <h3>Ferrari 458 italia Arlu</h3>
+    </a>
+  </div>
+</main>
+
+<script>
+  // Variables pour stocker les filtres sélectionnés
+  let currentCategory = 'all';
+  let currentBrand = 'all';
+
+  // Applique les deux filtres combinés
+  function applyFilters() {
+    const cards = document.querySelectorAll('.model-card');
+    cards.forEach(card => {
+      const matchCategory = (currentCategory === 'all' || card.dataset.category.toLowerCase() === currentCategory.toLowerCase());
+      const matchBrand = (currentBrand === 'all' || card.dataset.brand.toLowerCase() === currentBrand.toLowerCase());
+      card.style.display = (matchCategory && matchBrand) ? 'block' : 'none';
+    });
+  }
+
+  // Gestion filtres catégorie
+  const categoryButtons = document.querySelectorAll('.category-filters button');
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Met à jour la sélection catégorie
+      currentCategory = button.dataset.category;
+
+      // Met à jour classes active et aria-pressed dans ce groupe
+      categoryButtons.forEach(btn => {
+        const isActive = btn === button;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive);
+      });
+
+      applyFilters();
+    });
+  });
+
+  // Gestion filtres marque
+  const brandButtons = document.querySelectorAll('.brand-filters button');
+  brandButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Met à jour la sélection marque
+      currentBrand = button.dataset.brand;
+
+      // Met à jour classes active et aria-pressed dans ce groupe
+      brandButtons.forEach(btn => {
+        const isActive = btn === button;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive);
+      });
+
+      applyFilters();
+    });
+  });
+
+  // Applique le filtre initial au chargement
+  applyFilters();
+</script>
+</body>
+</html>
