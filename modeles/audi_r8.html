@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Audi R8 V10 - Arlu</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .specs-grid .spec h3 {
+      color: #2563eb;
+    }
+    .btn-primary, .btn-configure {
+      background: linear-gradient(90deg, #18305c 0%, #2563eb 100%);
+      color: #fff;
+    }
+    .btn-primary:hover, .btn-configure:hover {
+      background: linear-gradient(90deg, #2563eb 0%, #18305c 100%);
+    }
+    .btn-secondary {
+      color: #2563eb;
+      border: 2px solid #2563eb;
+      background: #f4f6fa;
+    }
+    .btn-secondary:hover {
+      background: #e3e8f0;
+      color: #18305c;
+      border: 2px solid #18305c;
+    }
+    .perf-highlights {
+      background: linear-gradient(90deg, #e3e8f0 0%, #f4f6fa 100%);
+      border-radius: 2rem;
+      box-shadow: 0 4px 18px rgba(24,48,92,0.07);
+      border: 1px solid #e3e8f0;
+    }
+    .perf-value, .perf-label {
+      color: #18305c;
+    }
+  </style>
+</head>
+<body class="modele-page">
+
+<header class="header-main">
+  <a href="../index.html" class="logo-link">
+    <img src="../logo.png" alt="Logo Arlu" cla ss="logo-img"/>
+  </a>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Services</a>
+        <div class="dropdown-menu">
+          <a href="../models.html">Modèles</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </li>
+    </ul>
+
+  </nav>
+</header>
+
+<main class="main-content">
+  <section class="car-hero improved-hero">
+    <div class="hero-bg">
+      <h1 class="car-title">Audi R8 V10 Performance</h1>
+    </div>
+    <div class="car-image highlight-image">
+      <img src="../car_pics/audi_r8.png" alt="Audi R8 Arlu" class="main-car-img"/>
+    </div>
+    <p class="description large-desc">
+      L’Audi R8 V10 Performance Arlu se pare ici d’un <strong>bleu sombre métallisé</strong> qui souligne à merveille ses lignes tendues et son allure agressive.
+      Une supercar à la sonorité mythique, transformée par Arlu pour maximiser sensations, confort, et présence visuelle.<br>
+      <span class="desc-highlight">Cette configuration unique offre un compromis parfait entre route et piste.</span>
+    </p>
+    <div class="actions actions-hero">
+      <a href="../configurateur/configurateur_audi_r8.html" class="btn-primary btn-configure">Configurer ce modèle</a>
+    </div>
+  </section>
+
+  <section class="perf-highlights">
+    <div class="perf-item">
+      <div>
+        <div class="perf-value">3,1 s</div>
+        <div class="perf-label">0-100 km/h</div>
+      </div>
+    </div>
+    <div class="perf-item">
+      <div>
+        <div class="perf-value">330 km/h</div>
+        <div class="perf-label">Vitesse max</div>
+      </div>
+    </div>
+    <div class="perf-item">
+      <div>
+        <div class="perf-value">620 ch</div>
+        <div class="perf-label">Puissance</div>
+      </div>
+    </div>
+    <div class="perf-item">
+      <div>
+        <div class="perf-value">580 Nm</div>
+        <div class="perf-label">Couple</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="specs-section improved-specs">
+    <h2 class="section-title">Caractéristiques techniques</h2>
+    <div class="specs-grid">
+      <div class="spec"><h3>Moteur</h3><p>V10 5.2 L atmosphérique</p></div>
+      <div class="spec"><h3>Transmission</h3><p>Quattro – boîte S Tronic 7</p></div>
+      <div class="spec"><h3>Échappement</h3><p>Arlu Titanium Sport™ avec valves actives</p></div>
+      <div class="spec"><h3>Jantes</h3><p>20" Arlu Forged Lightweight</p></div>
+      <div class="spec"><h3>Intérieur</h3><p>Alcantara noir, surpiqûres bleues, carbone mat</p></div>
+      <div class="spec"><h3>Technologie</h3><p>Virtual Cockpit, Bang & Olufsen, connectivité complète</p></div>
+      <div class="spec"><h3>Couleur</h3><p>Bleu sombre métallisé (Arlu Exclusive)</p></div>
+      <div class="spec"><h3>Poids</h3><p>1595 kg</p></div>
+      <div class="spec"><h3>Prix estimé</h3><p>a partir de 207 000 €</p></div>
+    </div>
+  </section>
+
+  <div class="actions actions-bottom">
+    <a href="../models.html" class="btn-secondary">← Retour aux modèles</a>
+  </div>
+
+</main>
+
+<script>
+  // Menu déroulant pour toutes les pages
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = btn.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== parent) d.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+</script>
+</body>
+</html>
