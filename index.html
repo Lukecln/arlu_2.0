@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arlu - Préparateur Automobile</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,61 +16,66 @@
   <nav>
     <ul>
       <li><a href="index.html" class="active">Accueil</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="models.html">Modèles</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Services</a>
+        <div class="dropdown-menu">
+          <a href="models.html">Modèles</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section id="accueil">
-    <h2>Bienvenue chez Arlu</h2>
-    <h3>Votre préparateur automobile de confiance, spécialisé dans la personnalisation et la performance.<h3>
-  </section>
-<br>
-      <br>
-  <section id="modeles" style="text-align: center;">
-    <a href="models.html" class="btn-primary">Voir nos modèles</a>
-  </section>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-  <section id="apropos">
-    <h2>À propos de nous</h2>
-    <p>Arlu est une entreprise dédiée à la préparation automobile. Nous transformons votre voiture en une machine unique, alliant performance et esthétique. Notre passion et notre savoir-faire sont au service de chaque projet.</p>
-  </section>
-
-<div id="popup-update" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000;">
-  <div style="background: white; padding: 20px; max-width: 400px; margin: 15% auto; border-radius: 10px; text-align: center; position: relative;">
-    <h2>Mise à jour prochaine</h2>
-    <p>Le site va bientôt subir une mise à jour avec de nouvelles fonctionnalités !</p>
-    <footer>version actuel : 1.85.9</footer>
-    <button onclick="closePopup()" style="margin-top: 15px; padding: 8px 16px;">Fermer</button>
+  <div class="section-bar" style="margin-bottom:32px;">
+    <!-- Pas d'icône/image ici -->
+    <div class="section-bar-content" style="flex:2;">
+      <h2 style="margin-bottom:8px;">Bienvenue chez Arlu</h2>
+      <div class="description">
+        Préparateur automobile haut de gamme, spécialisé dans la personnalisation, la performance et l’excellence du détail.<br>
+        <span style="color:#e67e22;font-weight:700;">L’automobile, notre passion, votre signature.</span>
+      </div>
+    </div>
+    <div class="section-bar-infos">
+      <a href="models.html" class="btn-primary" style="width:auto;">Voir nos modèles</a>
+    </div>
   </div>
-</div>
-</main>
-<!-- Script JavaScript -->
-<script>
-  window.onload = function() {
-    document.getElementById('popup-update').style.display = 'block';
-  }
 
-  function closePopup() {
-    document.getElementById('popup-update').style.display = 'none';
-  }
+  <div class="section-bar">
+    <!-- Pas d'icône/image ici -->
+    <div class="section-bar-content" style="flex:2;">
+      <h2 style="margin-bottom:8px;">À propos de nous</h2>
+      <div>
+        Arlu est une entreprise française dédiée à la préparation automobile d’exception.<br>
+        Notre équipe d’experts transforme chaque véhicule en une pièce unique, alliant technologies de pointe, finitions sur mesure et performances optimisées.<br>
+        Nous accompagnons nos clients passionnés dans la réalisation de projets exclusifs, du conseil à la livraison, avec un engagement total pour la qualité et la discrétion.
+      </div>
+    </div>
+    <div class="section-bar-infos">
+      <span>Expertise : 10+ ans<br>Clients satisfaits : 500+</span>
+    </div>
+  </div>
+</main>
+
+<script>
+  // Menu déroulant pour toutes les pages
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const parent = btn.closest('.dropdown');
+      document.querySelectorAll('.dropdown').forEach(d => {
+        if (d !== parent) d.classList.remove('open');
+      });
+      parent.classList.toggle('open');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
 </script>
+
 </body>
 </html>
-
-
