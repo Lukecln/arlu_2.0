@@ -1,0 +1,206 @@
+/* Palette pro et premium */
+body.configurateur-page {
+  background: #f4f6fa;
+  color: #1a2233;
+}
+
+.config-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  padding-right: 320px;
+}
+
+.config-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #18305c;
+  margin-bottom: 0.5rem;
+}
+
+.price-estime.sticky-price {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #2563eb;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 0.7rem 2.2rem;
+  box-shadow: 0 2px 12px rgba(24,48,92,0.07);
+  border: 1px solid #e3e8f0;
+  position: fixed;
+  top: 24px;
+  right: 40px;
+  z-index: 100;
+}
+
+.config-form {
+  background: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(24,48,92,0.06);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.config-section {
+  margin-bottom: 2.2rem;
+}
+
+.config-section h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #18305c;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+.color-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #bfc8d6;
+  margin-right: 12px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(24,48,92,0.07);
+  outline: none;
+  background: #e3e8f0;
+}
+.color-btn.active, .color-btn:focus {
+  border: 3px solid #2563eb;
+  box-shadow: 0 0 0 3px #b3c7f7;
+}
+
+.option-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  border: 2px solid #bfc8d6;
+  background: #f4f6fa;
+  margin: 0.3rem 0.7rem 0.3rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: border 0.2s, background 0.2s, color 0.2s;
+  outline: none;
+  display: inline-block;
+  color: #1a2233;
+}
+.option-btn.active, .option-btn:focus {
+  border: 2px solid #2563eb;
+  background: #e3e8f0;
+  color: #2563eb;
+}
+
+.config-options {
+  margin-bottom: 1.2rem;
+}
+
+.config-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.2rem 0;
+}
+.config-summary li {
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+
+.actions-config {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+
+.btn-primary,
+.btn-configure {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #18305c 0%, #2563eb 100%);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 4px 18px rgba(24,48,92,0.13);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  margin: 0.5rem 0 0.5rem 0;
+}
+.btn-primary:hover,
+.btn-configure:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #18305c 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(24,48,92,0.18);
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #2563eb;
+  background: #f4f6fa;
+  border: 2px solid #2563eb;
+  border-radius: 40px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: #e3e8f0;
+  color: #18305c;
+  border: 2px solid #18305c;
+}
+
+/* Popup coordonnées */
+#devis-infos-popup {
+  background: rgba(24,48,92,0.35) !important;
+}
+#devis-infos-popup > div {
+  background: #fff !important;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(24,48,92,0.13);
+}
+#devis-infos-popup input[type="text"],
+#devis-infos-popup input[type="email"],
+#devis-infos-popup input[type="tel"] {
+  background: #e3e8f0;
+  border: 1px solid #bfc8d6;
+  color: #1a2233;
+}
+#devis-infos-popup button[type="submit"] {
+  background: linear-gradient(90deg, #18305c 0%, #2563eb 100%);
+  color: #fff;
+}
+#devis-infos-popup button[type="submit"]:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #18305c 100%);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .config-form {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .config-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding-right: 0;
+  }
+  .price-estime.sticky-price {
+    position: static;
+    margin-top: 0.7rem;
+    width: 100%;
+    text-align: left;
+    right: auto;
+    top: auto;
+  }
+}

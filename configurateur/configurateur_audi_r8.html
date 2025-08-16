@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Configurateur Audi R8 V10 - Arlu</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="configurateur.css" />
+</head>
+<body class="configurateur-page">
+
+<header class="header-main">
+  <a href="../index.html" class="logo-link">
+    <img src="../logo.png" alt="Logo Arlu" class="logo-img"/>
+  </a>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../models.html">Modèles</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main-content configurateur-content">
+  <div class="config-header">
+    <h1 class="config-title">Configurez votre Audi R8 V10 Performance</h1>
+    <div class="price-estime sticky-price">
+      Prix estimé : <span id="prix-estime">207 000</span> €
+    </div>
+  </div>
+  <form class="config-form" id="configForm" autocomplete="off" action="https://formspree.io/f/xyzpezng" method="POST">
+    <section class="config-section">
+      <h2>Couleur extérieure</h2>
+      <div class="config-options color-options" id="color-choices">
+        <button type="button" class="color-btn active" style="background:#233a5e" data-value="bleu" title="Bleu sombre métallisé"></button>
+        <button type="button" class="color-btn" style="background:#888c8e" data-value="gris" title="Gris Daytona"></button>
+        <button type="button" class="color-btn" style="background:#18191a" data-value="noir" title="Noir Mythos"></button>
+        <button type="button" class="color-btn" style="background:#a51c1c" data-value="rouge" title="Rouge Tango"></button>
+        <input type="hidden" name="couleur" value="bleu">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Jantes</h2>
+      <div class="config-options" id="jantes-choices">
+        <button type="button" class="option-btn active" data-value="20_arlu">20" Arlu Forged Lightweight (noir mat)</button>
+        <button type="button" class="option-btn" data-value="20_silver">20" Forged Silver</button>
+        <button type="button" class="option-btn" data-value="19_classic">19" Classic Design</button>
+        <input type="hidden" name="jantes" value="20_arlu">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Intérieur</h2>
+      <div class="config-options" id="interieur-choices">
+        <button type="button" class="option-btn active" data-value="alcantara_bleu">Alcantara noir, surpiqûres bleues, carbone mat</button>
+        <button type="button" class="option-btn" data-value="cuir_rouge">Cuir noir & rouge, inserts aluminium</button>
+        <button type="button" class="option-btn" data-value="full_cuir">Full cuir noir, inserts carbone brillant</button>
+        <input type="hidden" name="interieur" value="alcantara_bleu">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Échappement</h2>
+      <div class="config-options" id="echappement-choices">
+        <button type="button" class="option-btn active" data-value="arlu_titanium">Arlu Titanium Sport™ (valves actives)</button>
+        <button type="button" class="option-btn" data-value="origine">Échappement d'origine Audi Sport</button>
+        <input type="hidden" name="echappement" value="arlu_titanium">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Étriers de frein</h2>
+      <div class="config-options" id="etriers-choices">
+        <button type="button" class="option-btn active" data-value="rouge">Rouge</button>
+        <button type="button" class="option-btn" data-value="noir">Noir</button>
+        <button type="button" class="option-btn" data-value="jaune">Jaune</button>
+        <input type="hidden" name="etriers" value="rouge">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Inserts décoratifs</h2>
+      <div class="config-options" id="inserts-choices">
+        <button type="button" class="option-btn active" data-value="carbone_mat">Carbone mat</button>
+        <button type="button" class="option-btn" data-value="carbone_brillant">Carbone brillant</button>
+        <button type="button" class="option-btn" data-value="alu">Aluminium brossé</button>
+        <input type="hidden" name="inserts" value="carbone_mat">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Pack Carbone extérieur</h2>
+      <div class="config-options" id="packcarbone-choices">
+        <button type="button" class="option-btn active" data-value="non">Non</button>
+        <button type="button" class="option-btn" data-value="oui">Oui (+6 000 €)</button>
+        <input type="hidden" name="packcarbone" value="non">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Pack Plus Furtif</h2>
+      <div class="config-options" id="furtif-choices">
+        <button type="button" class="option-btn active" data-value="non">Non</button>
+        <button type="button" class="option-btn" data-value="oui">Oui (+8 000 €)</button>
+        <input type="hidden" name="furtif" value="non">
+      </div>
+      <div class="option-desc" style="font-size:0.97em;color:#666;margin-top:0.3em;">
+        <em>Look noir, logos noirs, vitres surteintées, détails furtifs exclusifs Arlu.</em>
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Toit</h2>
+      <div class="config-options" id="toit-choices">
+        <button type="button" class="option-btn active" data-value="carbone">Carbone (+2 500 €)</button>
+        <button type="button" class="option-btn" data-value="noir">Noir brillant</button>
+        <button type="button" class="option-btn" data-value="carrosserie">Couleur carrosserie</button>
+        <input type="hidden" name="toit" value="carbone">
+      </div>
+    </section>
+
+    <section class="config-section">
+      <h2>Système audio</h2>
+      <div class="config-options" id="audio-choices">
+        <button type="button" class="option-btn" data-value="audi">Audi Standard</button>
+        <button type="button" class="option-btn active" data-value="bose">Bang & Olufsen (+1 500 €)</button>
+        <button type="button" class="option-btn" data-value="arlu">Arlu Signature (+3 500 €)</button>
+        <input type="hidden" name="audio" value="bose">
+      </div>
+    </section>
+
+    <section class="config-section config-summary">
+      <h2>Résumé de votre configuration</h2>
+      <ul>
+        <li><strong>Couleur :</strong> <span id="summary-couleur">Bleu sombre métallisé (Arlu Exclusive)</span></li>
+        <li><strong>Jantes :</strong> <span id="summary-jantes">20" Arlu Forged Lightweight (noir mat)</span></li>
+        <li><strong>Intérieur :</strong> <span id="summary-interieur">Alcantara noir, surpiqûres bleues, carbone mat</span></li>
+        <li><strong>Échappement :</strong> <span id="summary-echappement">Arlu Titanium Sport™ (valves actives)</span></li>
+        <li><strong>Étriers :</strong> <span id="summary-etriers">Rouge</span></li>
+        <li><strong>Inserts :</strong> <span id="summary-inserts">Carbone mat</span></li>
+        <li><strong>Pack Carbone :</strong> <span id="summary-packcarbone">Non</span></li>
+        <li><strong>Pack Plus Furtif :</strong> <span id="summary-furtif">Non</span></li>
+        <li><strong>Toit :</strong> <span id="summary-toit">Carbone</span></li>
+        <li><strong>Système audio :</strong> <span id="summary-audio">Bang & Olufsen (+1 500 €)</span></li>
+      </ul>
+      <textarea id="config-message" name="message" class="devis-message-readonly" readonly style="display:none;"></textarea>
+    </section>
+
+    <div class="actions actions-config">
+      <button type="button" id="showDevisInfos" class="btn-primary btn-configure">Demander un devis personnalisé</button>
+      <a href="../models.html" class="btn-secondary">← Retour aux modèles</a>
+    </div>
+
+    <div id="devis-infos-popup" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(30,37,54,0.45);z-index:999;align-items:center;justify-content:center;">
+      <div style="background:#fff;padding:2rem 2.2rem;border-radius:1.5rem;max-width:370px;width:90vw;box-shadow:0 8px 32px rgba(30,95,163,0.13);position:relative;">
+        <button type="button" id="closeDevisInfos" style="position:absolute;top:12px;right:18px;font-size:1.5rem;background:none;border:none;cursor:pointer;color:#1e5fa3;">×</button>
+        <h3 style="margin-bottom:1.2rem;">Vos coordonnées</h3>
+        <label for="nom">Nom <span style="color:#e67e22;">*</span></label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required style="border:none;box-shadow:none;background:#f0f9fa;margin-bottom:10px;width:100%;" />
+        <label for="email">Adresse email <span style="color:#e67e22;">*</span></label>
+        <input type="email" id="email" name="email" placeholder="exemple@domaine.com" required style="border:none;box-shadow:none;background:#f0f9fa;margin-bottom:10px;width:100%;" />
+        <label for="telephone">Téléphone (optionnel)</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" style="border:none;box-shadow:none;background:#f0f9fa;margin-bottom:10px;width:100%;" />
+        <button type="submit" class="btn-primary" style="width:100%;margin-top:1.2rem;">Envoyer la demande</button>
+      </div>
+    </div>
+  </form>
+</main>
+
+<footer class="footer-main">
+  <p>&copy; 2024 Arlu. Tous droits réservés.</p>
+</footer>
+
+<script>
+  // Mapping des valeurs pour le résumé
+  const resumeLabels = {
+    couleur: {
+      bleu: 'Bleu sombre métallisé (Arlu Exclusive)',
+      gris: 'Gris Daytona',
+      noir: 'Noir Mythos',
+      rouge: 'Rouge Tango'
+    },
+    jantes: {
+      '20_arlu': '20" Arlu Forged Lightweight (noir mat)',
+      '20_silver': '20" Forged Silver',
+      '19_classic': '19" Classic Design'
+    },
+    interieur: {
+      alcantara_bleu: 'Alcantara noir, surpiqûres bleues, carbone mat',
+      cuir_rouge: 'Cuir noir & rouge, inserts aluminium',
+      full_cuir: 'Full cuir noir, inserts carbone brillant'
+    },
+    echappement: {
+      arlu_titanium: 'Arlu Titanium Sport™ (valves actives)',
+      origine: "Échappement d'origine Audi Sport"
+    },
+    etriers: {
+      rouge: 'Rouge',
+      noir: 'Noir',
+      jaune: 'Jaune'
+    },
+    inserts: {
+      carbone_mat: 'Carbone mat',
+      carbone_brillant: 'Carbone brillant',
+      alu: 'Aluminium brossé'
+    },
+    packcarbone: {
+      non: 'Non',
+      oui: 'Oui (+6 000 €)'
+    },
+    furtif: {
+      non: 'Non',
+      oui: 'Oui (+8 000 €)'
+    },
+    toit: {
+      carbone: 'Carbone (+2 500 €)',
+      noir: 'Noir brillant',
+      carrosserie: 'Couleur carrosserie'
+    },
+    audio: {
+      audi: 'Audi Standard',
+      bose: 'Bang & Olufsen (+1 500 €)',
+      arlu: 'Arlu Signature (+3 500 €)'
+    }
+  };
+
+  // Prix de base et suppléments réalistes
+  const prixBase = 205500;
+  const prixOptions = {
+    couleur: { bleu: 0, gris: 0, noir: 0, rouge: 0 },
+    jantes: { '20_arlu': 3200, '20_silver': 1800, '19_classic': 0 },
+    interieur: { alcantara_bleu: 0, cuir_rouge: 1800, full_cuir: 2500 },
+    echappement: { arlu_titanium: 4200, origine: 0 },
+    etriers: { rouge: 0, noir: 0, jaune: 900 },
+    inserts: { carbone_mat: 1200, carbone_brillant: 1500, alu: 0 },
+    packcarbone: { non: 0, oui: 6500 },
+    furtif: { non: 0, oui: 8500 },
+    toit: { carbone: 3500, noir: 0, carrosserie: 0 },
+    audio: { audi: 0, bose: 1700, arlu: 3900 }
+  };
+
+  function updateActiveBtns(groupId, value) {
+    const group = document.getElementById(groupId);
+    if (!group) return;
+    group.querySelectorAll('.option-btn, .color-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.value === value);
+    });
+    group.querySelector('input[type="hidden"]').value = value;
+  }
+
+  function updateSummaryAndPrice() {
+    const form = document.querySelector('.config-form');
+    const selections = {
+      couleur: form.couleur.value,
+      jantes: form.jantes.value,
+      interieur: form.interieur.value,
+      echappement: form.echappement.value,
+      etriers: form.etriers.value,
+      inserts: form.inserts.value,
+      packcarbone: form.packcarbone.value,
+      furtif: form.furtif.value,
+      toit: form.toit.value,
+      audio: form.audio.value
+    };
+    // Résumé
+    for (const key in selections) {
+      const el = document.getElementById('summary-' + key);
+      if (el && resumeLabels[key][selections[key]]) {
+        el.textContent = resumeLabels[key][selections[key]];
+      }
+    }
+    // Prix
+    let prix = prixBase;
+    for (const key in selections) {
+      prix += prixOptions[key][selections[key]] || 0;
+    }
+    document.getElementById('prix-estime').textContent = prix.toLocaleString('fr-FR');
+  }
+
+  // Gestion des boutons custom (ajout du groupe furtif)
+  document.querySelectorAll('.config-options').forEach(group => {
+    group.querySelectorAll('.option-btn, .color-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        updateActiveBtns(group.id, btn.dataset.value);
+        updateSummaryAndPrice();
+      });
+    });
+  });
+
+  // Init résumé/prix au chargement
+  updateSummaryAndPrice();
+
+  // Nouvelle fonction pour générer le mailto avec le récap
+  function getConfigMailBody(selections) {
+    return (
+      "Configuration Audi R8 V10 Performance\n" +
+      "------------------------------------\n" +
+      "Couleur : " + resumeLabels.couleur[selections.couleur] + "\n" +
+      "Jantes : " + resumeLabels.jantes[selections.jantes] + "\n" +
+      "Intérieur : " + resumeLabels.interieur[selections.interieur] + "\n" +
+      "Échappement : " + resumeLabels.echappement[selections.echappement] + "\n" +
+      "Étriers : " + resumeLabels.etriers[selections.etriers] + "\n" +
+      "Inserts : " + resumeLabels.inserts[selections.inserts] + "\n" +
+      "Pack Carbone : " + resumeLabels.packcarbone[selections.packcarbone] + "\n" +
+      "Pack Plus Furtif : " + resumeLabels.furtif[selections.furtif] + "\n" +
+      "Toit : " + resumeLabels.toit[selections.toit] + "\n" +
+      "Système audio : " + resumeLabels.audio[selections.audio] + "\n" +
+      "Prix estimé : " + document.getElementById('prix-estime').textContent + " €"
+    );
+  }
+
+  // Affichage dynamique du formulaire d'infos perso
+  document.getElementById('showDevisInfos').onclick = function() {
+    document.getElementById('devis-infos-popup').style.display = 'flex';
+  };
+  document.getElementById('closeDevisInfos').onclick = function() {
+    document.getElementById('devis-infos-popup').style.display = 'none';
+  };
+
+  // Empêche la soumission directe du formulaire, sauf depuis le popup
+  document.getElementById('configForm').addEventListener('submit', function(e) {
+    // Vérifie que le popup est affiché (donc que les infos sont bien remplies)
+    if (document.getElementById('devis-infos-popup').style.display !== 'flex') {
+      e.preventDefault();
+      document.getElementById('devis-infos-popup').style.display = 'flex';
+      return false;
+    }
+    // Vérification simple des champs requis
+    var nom = document.getElementById('nom').value.trim();
+    var email = document.getElementById('email').value.trim();
+    if (!nom || !email) {
+      alert('Merci de renseigner votre nom et votre email.');
+      e.preventDefault();
+      return false;
+    }
+    // Génère le message de config avant envoi
+    const form = document.querySelector('.config-form');
+    const selections = {
+      couleur: form.couleur.value,
+      jantes: form.jantes.value,
+      interieur: form.interieur.value,
+      echappement: form.echappement.value,
+      etriers: form.etriers.value,
+      inserts: form.inserts.value,
+      packcarbone: form.packcarbone.value,
+      furtif: form.furtif.value,
+      toit: form.toit.value,
+      audio: form.audio.value
+    };
+    document.getElementById('config-message').value = getConfigMailBody(selections);
+    // Laisse le submit se faire normalement (Formspree)
+  });
+</script>
+</body>
+</html>
