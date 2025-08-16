@@ -56,8 +56,27 @@
       <span>Expertise : 10+ ans<br>Clients satisfaits : 500+</span>
     </div>
   </div>
-</main>
 
+  <div id="popup-update" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000;">
+    <div style="background: white; padding: 20px; max-width: 400px; margin: 15% auto; border-radius: 10px; text-align: center; position: relative;">
+      <h2>Mise à jour prochaine</h2>
+      <p>Ce site est en cours de construction !</p>
+      <p>bug possible</p>
+      <p>site incomplet</p>
+      <footer>version actuel : beta 2.0.1</footer>
+      <button onclick="closePopup()" style="margin-top: 15px; padding: 8px 16px;">Fermer</button>
+    </div>
+  </div>
+</main>
+<script>
+  window.onload = function() {
+    document.getElementById('popup-update').style.display = 'block';
+  }
+
+  function closePopup() {
+    document.getElementById('popup-update').style.display = 'none';
+  }
+</script>
 <script>
   // Menu déroulant pour toutes les pages
   document.querySelectorAll('.dropdown-toggle').forEach(btn => {
@@ -79,3 +98,4 @@
 
 </body>
 </html>
+
